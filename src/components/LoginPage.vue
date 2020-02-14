@@ -1,21 +1,29 @@
 <template>
   <article>
-    <div class="container" :class="{'sign-up-active':signUp}">
+    <div class="container" :class="{ 'sign-up-active': signUp }">
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-left">
             <h2>Welcome Back!</h2>
             <p>Please Login with your personal info</p>
-            <button class="invert" id="signIn" @click="signUp =!signUp">Sign In</button>
+            <button class="invert" id="signIn" @click="signUp = !signUp">
+              Sign In
+            </button>
           </div>
           <div class="overlay-right">
             <h2>Welcome!</h2>
             <p>Please enter your personal details</p>
-            <button class="invert" id="signUp" @click="signUp =!signUp">Sign Up</button>
+            <button class="invert" id="signUp" @click="signUp = !signUp">
+              Sign Up
+            </button>
           </div>
         </div>
       </div>
-      <form class="sign-up" method="post" action="https://iotharsh.herokuapp.com/signup">
+      <form
+        class="sign-up"
+        method="post"
+        action="https://iotharsh.herokuapp.com/register"
+      >
         <h2>Create User</h2>
         <div>Use your email for registration</div>
         <input name="userName" type="text" placeholder="Name" />
@@ -23,13 +31,17 @@
         <input name="userPassword" type="password" placeholder="Password" />
         <button>Sign Up</button>
       </form>
-      <form class="sign-in" method="post" action="https://iotharsh.herokuapp.com/signin">
+      <form
+        class="sign-in"
+        method="post"
+        action="https://iotharsh.herokuapp.com/auth/login"
+      >
         <h2>SIGN IN</h2>
         <div>Use your account</div>
         <input name="userEmail" type="email" placeholder="Email" />
         <input name="userPassword" type="password" placeholder="Password" />
         <button type="submit">Sign In</button>
-        <a href="#">Forgot your password</a>
+        <a href="https://iotharsh.herokuapp.com/auth/google">Google Sign in</a>
       </form>
     </div>
   </article>
